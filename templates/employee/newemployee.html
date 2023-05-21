@@ -1,0 +1,62 @@
+{% extends "employee/base.html" %}
+{% include "employee/header.html" %}
+{% block header %}
+<div style="margin-top: -130px; margin-bottom: 100px">
+<h1 style="text-align: center; margin-top: 20px; margin-bottom: 100px">ADD EMPLOYEE</h1>
+{% endblock %}
+{% block content %}
+
+<div class=" col-lg-4 offset-lg-4">
+<div class="panel panel-primary">
+<div class="panel-heading"></div>
+<div class="panel-body">
+<form class="form-horizontal" method="post" action="/addemployee/" style="text-align: center">
+    {% csrf_token %}
+  <div class="form-group" align="center">
+    <div style="margin-bottom: 20px; margin-top: -40px; font-size: 100px">
+    <span class="fa fa-user"></span>
+    </div>
+    <span style="text-align: center"><label for="name" class="col-sm-2 control-label" style="font-size: larger; font-family: 'Arial Rounded MT Bold'; padding: unset">Name</label></span>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="name" placeholder="Enter Your Name">
+    </div>
+  </div>
+  <div class="form-group" align="center">
+    <label for="gender" class="col-sm-2 control-label" style="font-size: larger; font-family: 'Arial Rounded MT Bold'; padding: unset">Gender</label>
+    <div class="col-sm-10">
+      <table>
+      <tr>
+          <td><input type="radio" class="form-control" name="gender" style="margin-top: -5px; margin-left:30px" value="Male"><span style="margin-left: 20px">Male</span></td>
+          <td><input type="radio" class="form-control" name="gender" style="margin-top: -5px; margin-left: 60px" value="Female"><span style="margin-left: 50px">Female</span></td>
+      </tr>
+      </table>
+    </div>
+  </div>
+  <div class="form-group" align="center">
+    <label for="department" class="col-sm-2 control-label" style="font-size: larger; font-family: 'Arial Rounded MT Bold'; padding: unset; text-align: center; margin-left: -40px">Department</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="department" placeholder="Enter Your Department">
+    </div>
+  </div>
+  <div class="form-group" align="center">
+    <label for="department" class="col-sm-2 control-label" style="font-size: larger; font-family: 'Arial Rounded MT Bold'; padding: unset">Salary</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="salary" placeholder="Enter Your Salary (per annum)">
+    </div>
+  </div>
+
+  <div class="form-group" align="center">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">SUBMIT</button>
+    </div>
+  </div>
+</form>
+<div class="form-group" align="center">
+<div class="col-sm-offset-2 col-sm-10">
+    <a href="/displayemployee/"><button class="btn btn-default">VIEW EMPLOYEES</button></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
